@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Realtime Chat</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/assets/css/bootstrap.min.css"
+      integrity="sha256-Mp5MUgb8cjkGtTftnq3keEVxsByE6WQlymfB/r46CCU="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>Welcome to 197 Chat</h1>
+
+    <ul id="messages"></ul>
+    <input type="text" id="message-input" />
+    <button class="btn btn-primary" id="send-message">Send Message</button>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"
+      integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/client.js"></script>
+  </body>
+</html>
