@@ -7,22 +7,22 @@ const expensiveOperation = () => {
 
 const async = () => {
   console.log('first')
-  expensiveOperation()
-  console.log('second')
+  const data = expensiveOperation()
+  console.log(data)
 }
 
-async() // -> how about now?
+// async() // -> how about now?
 
 
-setTimeout(() => {
-  console.log('woah')
-}, 2)
+// setTimeout(() => {
+//   console.log('woah')
+// }, 2)
 
-let x = 1
-while (x < 10000000000) {
-  x = x + 1
-}
-console.log(x)
+// let x = 1
+// while (x < 10000000000) {
+//   x = x + 1
+// }
+// console.log(x)
 
 // USED FOR THE CALLBACK DEMO
 // var a = function() {

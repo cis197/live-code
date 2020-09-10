@@ -3,9 +3,9 @@ const fs = require('fs')
 
 const records = []
 
-const appendRecord = data => {
-  records.push(data)
-}
+// const appendRecord = data => {
+//   records.push(data)
+// }
 
 const printRecord = () => {
   console.log(records)
@@ -14,6 +14,7 @@ const printRecord = () => {
 // THE WAY WE DID IN HOMEWORK
 fs.createReadStream('./PatientInfo.csv')
   .pipe(csv())
-  .on('data', appendRecord)
+  .on('data', data => {
+    records.push(data)
+  })
   .on('end', printRecord)
-

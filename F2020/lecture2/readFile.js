@@ -11,14 +11,16 @@ const util = require('util')
 
 // Approach 1: READ FILE USING CALLBACK
 const readCallback = () => {
-  fs.readFile('./PatientInfo.csv', 'utf8', (err, data) => {
+  const callback = function (err, data) {
     const records = parse(data, {
       columns: true,
       skip_empty_lines: true
     })
-
+  
     console.log(records)
-  })
+  }
+  
+  fs.readFile('./PatientInfo.csv', 'utf8', callback)
 }
 
 // Approach 2: READ FILE USING PROMISES
@@ -38,11 +40,11 @@ const readPromise = () => {
 }
 
 // Approach 3: READ FILE USING PROMISES + async/ await
-const readPromiseAsync = async () => {
+const readPromiseAsync = () => {
   // convert the function into the promise version
   const readFile = util.promisify(fs.readFile)
 
-  const data = await readFile('./PatientInfo.csv', 'utf8')
+  const data = readFile('./PatientInfo.csv', 'utf8')
 
   const records = parse(data, {
     columns: true,
