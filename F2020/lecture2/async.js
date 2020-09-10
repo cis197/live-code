@@ -23,3 +23,18 @@ while (x < 10000000000) {
   x = x + 1
 }
 console.log(x)
+
+// USED FOR THE CALLBACK DEMO
+// var a = function() {
+//   console.log('first');
+//   setTimeout(function() { 
+//     console.log('i was running late');
+//   }, 3000);
+//   setTimeout(function() { 
+//     console.log('i was running late for 10 sec');
+//   }, 10000);
+//   console.log('second');
+//   console.log('third');
+//   console.log('fourth');
+// };
+// a();
