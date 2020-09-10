@@ -4,10 +4,10 @@ const fs = require('fs')
 const parse = require('csv-parse/lib/sync')
 const util = require('util')
 
-const data = fs.readFile('./PatientInfo.csv', 'utf8', () => {})
-console.log('hello')
-console.log(data)
-console.log('hello')
+// const data = fs.readFile('./PatientInfo.csv', 'utf8', () => {})
+// console.log('hello')
+// console.log(data)
+// console.log('hello2')
 
 // Approach 1: READ FILE USING CALLBACK
 const readCallback = () => {
@@ -24,6 +24,7 @@ const readCallback = () => {
 // Approach 2: READ FILE USING PROMISES
 const readPromise = () => {
   // convert the function into the promise version
+  // reference: https://stackoverflow.com/questions/46867517/how-to-read-file-with-async-await-properly
   const readFile = util.promisify(fs.readFile)
 
   readFile('./PatientInfo.csv', 'utf8').then(data => {
@@ -42,6 +43,7 @@ const readPromiseAsync = async () => {
   const readFile = util.promisify(fs.readFile)
 
   const data = await readFile('./PatientInfo.csv', 'utf8')
+
   const records = parse(data, {
     columns: true,
     skip_empty_lines: true
@@ -61,3 +63,4 @@ const readSync = () => {
 
 // readCallback()
 // readPromise()
+readPromiseAsync()
