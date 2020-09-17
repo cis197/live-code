@@ -2,13 +2,15 @@ body {
   color: red;
 }
 
+.yellow-text {
+  color: yellow;
+}
+
 .red-text {
   color: red;
 }
 
-.yellow-text {
-  color: yellow;
-}
+
 
 #info {
   color: yellow;
