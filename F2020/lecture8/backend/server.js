@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const express = require('express')
 const cookieSession = require('cookie-session')
+const path = require('path')
 
 const UserRouter = require('./routes/user')
 const AccountRouter = require('./routes/account')
@@ -13,6 +14,7 @@ mongoose.connect(MONGO_URI, {
   useUnifiedTopology: true
 })
 
+app.use(express.static('dist'))
 app.use(express.json())
 
 app.use(
@@ -25,6 +27,12 @@ app.use(
 
 app.use('/user', UserRouter)
 app.use('/account', AccountRouter)
+
+// IMPORTANT: U NEED THIS
+app.get('/favicon.ico', (_, res) => res.status(404).send())
+app.get('*', (_, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'))
+})
 
 app.listen(3000, () => {
   console.log('listening on 3000')
