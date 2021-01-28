@@ -8,7 +8,7 @@ const records = []
 // }
 
 const printRecord = () => {
-  // console.log(records)
+  console.log(records)
 }
 
 // THE WAY WE DID IN HOMEWORK
@@ -19,4 +19,4 @@ fs.createReadStream('./PatientInfo.csv')
   })
   .on('end', printRecord)
 
-console.log(records)
+// console.log(records)

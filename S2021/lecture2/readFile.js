@@ -23,20 +23,31 @@ const readCallback = () => {
   fs.readFile('./PatientInfo.csv', 'utf8', callback)
 }
 
+const cb = data => {
+  const records = parse(data, {
+    columns: true,
+    skip_empty_lines: true
+  })
+
+  // console.log(records)
+
+  throw new Error('i am handsome')
+}
+
+const errorCb = () => {
+  console.log('an error occured')
+}
+
 // Approach 2: READ FILE USING PROMISES
 const readPromise = () => {
   // convert the function into the promise version
   // reference: https://stackoverflow.com/questions/46867517/how-to-read-file-with-async-await-properly
   const readFile = util.promisify(fs.readFile)
 
-  readFile('./PatientInfo.csv', 'utf8').then(data => {
-    const records = parse(data, {
-      columns: true,
-      skip_empty_lines: true
-    })
+  readFile('./PatientInfo.csv', 'utf8').then(cb)
+  .catch(errorCb)
 
-    console.log(records)
-  })
+  console.log(readFile('./PatientInfo.csv', 'utf8'))
 }
 
 // Approach 3: READ FILE USING PROMISES + async/ await

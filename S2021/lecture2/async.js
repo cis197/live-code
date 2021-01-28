@@ -20,27 +20,27 @@
 // async() // -> how about now?
 
 
-// setTimeout(() => {
-//   console.log('woah')
-// }, 2)
+setTimeout(() => {
+  console.log('woah')
+}, 2)
 
-// let x = 1
-// while (x < 10000000000) {
-//   x = x + 1
+let x = 1
+while (x < 10000000000) {
+  x = x + 1
+}
+console.log(x)
+
+// const expensiveOperation = () => {
+//   setTimeout(() => {
+//     console.log('i am expensive')
+//     return 'data'
+//   }, 5000)
 // }
-// console.log(x)
 
-const expensiveOperation = () => {
-  setTimeout(() => {
-    console.log('i am expensive')
-    return 'data'
-  }, 5000)
-}
+// const async = () => {
+//   console.log('first')
+//   const data = expensiveOperation()
+//   console.log(`data: ${data}`)
+// }
 
-const async = () => {
-  console.log('first')
-  const data = expensiveOperation()
-  console.log(`data: ${data}`)
-}
-
-async() // -> how about now?
+// async() // -> how about now?
