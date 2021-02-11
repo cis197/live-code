@@ -62,7 +62,8 @@
     <script>
       $(document).ready(() => {
         console.log("the website is almost ready")
-        $('.click').click(function(){
+        $('.click').click(function() {
+          console.log(this)
           $(this).css('color', 'orange')
         })
       })
