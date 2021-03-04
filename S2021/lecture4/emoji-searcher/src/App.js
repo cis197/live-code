@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import axios from 'axios'
 
 import Title from './Title'
@@ -8,51 +8,63 @@ import emojiList from './emojiList.json'
 
 // import { Title, SearchInput, SearchResults } from './exports'
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = { emojis: emojiList, textInput: '', data: {} }
-    this.textInput = ''
-  }
+// class App extends Component {
+//   constructor() {
+//     super()
+//     this.state = { emojis: emojiList, textInput: '', data: {} }
+//     this.textInput = ''
+//   }
 
-  componentDidMount() {
-    console.log('this component is ready to get displayed')
+//   componentDidMount() {
+//     console.log('this component is ready to get displayed')
 
+//     axios.get('https://jsonplaceholder.typicode.com/todos/1').then(response => {
+//       console.log(response)
+//       // const { data } = response
+//       this.setState({ data: response.data })
+//     })
+//   }
+
+//   render() {
+//     const { emojis, textInput, data } = this.state
+
+//     console.log(this.textInput)
+
+//     return (
+//       <>
+//         <Title />
+//         <SearchInput onChange={e => this.setState({ textInput: e.target.value })} />
+//         {/* <SearchInput onChange={e => this.textInput = e.target.value} /> */}
+//         <SearchResults emojis={emojis} textInput={textInput} />
+//         user id: {data.userId}
+//       </>
+//     )
+//   }
+// }
+
+const App = () => {
+  const [textInput, setTextInput] = useState('')
+  const [data, setData] = useState({})
+
+  useEffect(() => {
     axios.get('https://jsonplaceholder.typicode.com/todos/1').then(response => {
       console.log(response)
       // const { data } = response
-      this.setState({ data: response.data })
+      setData(response.data)
+      // this.setState({ data: response.data })
     })
-  }
+  }, [textInput])
 
-  render() {
-    const { emojis, textInput, data } = this.state
-
-    console.log(this.textInput)
-
-    return (
-      <>
-        <Title />
-        {/* <SearchInput onChange={e => this.setState({ textInput: e.target.value })} /> */}
-        <SearchInput onChange={e => this.textInput = e.target.value} />
-        <SearchResults emojis={emojis} textInput={textInput} />
-        user id: {data.userId}
-      </>
-    )
-  }
+  return (
+    <>
+      <Title />
+      <SearchInput onChange={e => setTextInput(e.target.value)} />
+      <SearchResults emojis={emojiList} textInput={textInput} />
+      user id:
+      {data.userId}
+    </>
+  )
 }
-
-// const App = () => {
-//   const [textInput, setTextInput] = useState('')
-
-//   return (
-//     <>
-//       <Title />
-//       <SearchInput onChange={e => setTextInput(e.target.value)} />
-//       <SearchResults emojis={emojiList} textInput={textInput} />
-//     </>
-//   )
-// }
 
 // function App() {
 //   return (

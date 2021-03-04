@@ -19,9 +19,11 @@ class SearchResults extends Component {
     super(props)
   }
 
-  componentDidUpdate() {
-    console.log('something in the props has changed')
-  }
+  // componentDidUpdate(prevProps) {
+  //   console.log('something in the props has changed')
+  //   console.log(`this is the text input from last time: ${prevProps.textInput}`)
+  //   console.log(`this is the current text input: ${this.props.textInput}`)
+  // }
 
   render() {
     const { emojis, textInput } = this.props
