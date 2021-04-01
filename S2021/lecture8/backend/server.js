@@ -19,12 +19,25 @@ app.use(cookieSession({
   // maxAge: 5000 // 5 seconds
 }))
 
+// INTEGRATION
+app.use(express.static('dist'))
+
 app.use(express.json())
+
 
 app.use('/user', UserRouter)
 app.use('/account', AccountRouter)
-app.get('/', (req, res) => {
-  res.send(`welcome ${req.session.username}`)
+// app.get('/', (req, res) => {
+//   res.send(`welcome ${req.session.username}`)
+// })
+
+
+// INTEGRATION
+app.get('/favicon.ico', (req, res) => {
+  res.status(404).send()
+})
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'))
 })
 
 app.listen(3000, () => {
