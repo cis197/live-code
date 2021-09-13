@@ -23,9 +23,9 @@ app.use((req, res, next) => {
 //   next()
 // })
 
-// app.use('/error', (req, res, next) => {
-//   next(new Error('Something exploded!'))
-// })
+app.use('/error', (req, res, next) => {
+  next('Something exploded!')
+})
 
 app.get('/', (req, res) => {
   res.send('hello world!')
@@ -36,6 +36,7 @@ app.use('/login', loginRouter)
 app.use('/project', projectRouter)
 
 app.use((err, req, res, next) => {
+  console.log(err)
   res.status(500).send('Something broke!')
 })
 
