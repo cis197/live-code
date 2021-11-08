@@ -26,7 +26,7 @@ app.use(express.json())
 app.use(session({
   name: 'session',
   keys: ['key1', 'key2'],
-  maxAge: 3600
+  maxAge: 3600 //in ms
 }))
 
 app.get('/', (req, res) => {
