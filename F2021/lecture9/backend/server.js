@@ -15,6 +15,8 @@ mongoose.connect(MONGO_URI, {
   useUnifiedTopology: true
 })
 
+app.use(express.static('dist'))
+
 // handling POST --> req.body
 app.use(express.json())
 
@@ -36,6 +38,15 @@ app.post('/', (req, res) => {
 app.use('/user', UserRouter)
 app.use('/account', AccountRouter)
 app.use('/transaction', TransactionRouter)
+
+app.get('/favicon.ico', (req, res) => {
+  res.status(404).send()
+})
+
+// set the initial entry point
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'))
+})
 
 app.listen(3000, () => {
   console.log('listening on port 3000')

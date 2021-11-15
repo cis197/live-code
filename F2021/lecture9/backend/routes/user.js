@@ -4,6 +4,15 @@ const router = express.Router()
 
 const User = require('../model/User')
 
+router.get('/all', async (req, res) => {
+  try {
+    const users = await User.find()
+    res.json(users)
+  } catch (err) {
+    res.send('fetch all users has problems')
+  }
+})
+
 // create user
 router.post('/create', async (req, res) => {
   const { username, password } = req.body
