@@ -1,0 +1,14 @@
+@use "./theme";
+@use "./components/nav";
+
+/* all this global stuff in the same file as utility and components ;-; */
+body {
+  font-family: theme.$font-family;
+}
+
+.container {
+  max-width: 900px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
