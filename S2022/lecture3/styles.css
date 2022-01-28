@@ -1,0 +1,16 @@
+body {
+  color: red;
+}
+
+.yellow-text {
+  color: yellow;
+}
+
+.red-text {
+  color: red;
+}
+
+#info {
+  color: rgb(174, 151, 109);
+}
+
