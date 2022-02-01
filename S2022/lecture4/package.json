@@ -9,8 +9,8 @@
   },
   "scripts": {
     "1:start": "serve 1.static/",
-    "2:start": "parcel 2.compiled/index.html --no-cache",
-    "3:start": "parcel 3.react/index.html --no-cache"
+    "2:start": "parcel 2.compiled/index.html --no-cache --port 3000",
+    "3:start": "parcel 3.react/index.html --no-cache --port 3000"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.2.1",
