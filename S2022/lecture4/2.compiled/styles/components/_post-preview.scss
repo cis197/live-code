@@ -1,0 +1,35 @@
+@use "../theme";
+
+$card-width: 400px;
+
+.post-preview {
+  width: $card-width;
+  padding: 24px;
+
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .10);
+
+  h3 {
+    // we can use our imported variables!
+    // color: theme.$primary-color;
+    font-size: 1.8rem;
+    margin: 12px 0 16px;
+  }
+
+  p {
+    margin: 12px 0;
+  }
+
+}
+
+.post-image {
+  width: 100%;
+}
+
+.post-link {
+  color: gray;
+
+  &:visited {
+    color: gray;
+  }
+}

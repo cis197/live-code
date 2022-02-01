@@ -7,6 +7,7 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'airbnb/hooks',
+    'plugin:prettier/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -15,17 +16,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
   rules: {
-    semi: ['error', 'never'],
-
-    'react/function-component-definition': ['error',
+    'react/function-component-definition': [
+      'error',
       {
         namedComponents: 'arrow-function',
         unnamedComponents: 'arrow-function',
       },
     ],
+    'react/prop-types': 0,
   },
 }
