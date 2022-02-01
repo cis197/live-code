@@ -1,7 +1,7 @@
 $card-width: 400px;
 
 .container {
-  width: $card-width;
+  max-width: $card-width;
   padding: 24px;
 
   border-radius: 6px;
@@ -19,6 +19,7 @@ $card-width: 400px;
 
 .image {
   width: 100%;
+  border-radius: 4px;
 }
 
 .link {

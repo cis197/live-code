@@ -7,6 +7,7 @@ body {
 .container {
   max-width: 900px;
 
+  margin-top: 48px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -19,19 +20,24 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .10);
 }
 
+.post-image {
+  width: 100%;
+  border-radius: 4px;
+}
+
 .post-preview h3 {
   font-size: 1.8rem;
   margin: 12px 0 16px;
-}
-
-.post-preview a {
-  color: gray;
 }
 
 .post-preview p {
   margin: 12px 0;
 }
 
-.post-preview a:visited {
+.post-link {
+  color: gray;
+}
+
+.post-link:visited {
   color: gray;
 }
