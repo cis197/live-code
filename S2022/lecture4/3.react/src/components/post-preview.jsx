@@ -10,6 +10,7 @@ const imageUrl = new URL(
 )
 
 // nicely organized class names as variables!
+
 const PostPreview = ({ title, description }) => (
   <article className={style.container}>
     <img
@@ -51,12 +52,15 @@ const PostPreview = ({ title, description }) => (
 //   }
 // `
 
-// we could even factor these out into their own modular components...
+// we could even factor these out into their own files...
+
+// and this one uses props..?
 
 // const PostPreviewImage = styled.img`
 //   width: 100%;
 //   height: auto;
 //   border-radius: 4px;
+//   filter: ${(props) => props.censored && 'blur(20px)'};
 // `
 
 // const PostAnchor = styled.a`
@@ -67,7 +71,7 @@ const PostPreview = ({ title, description }) => (
 //   }
 // `
 
-// TODO: show we can use props in styled-components
+// our markup is much more legible and concise!
 
 // const PostPreview = ({ title, description }) => (
 //   <PostPreviewContainer>
@@ -82,18 +86,21 @@ const PostPreview = ({ title, description }) => (
 
 // tailwind!!
 
-// inline styles but... concise?
+// inline styles but... concise like bootstrap?
+// and this is all the code we need..!
+
 // const PostPreview = ({ title, description }) => (
 //   <article className="p-4 shadow-lg rounded-xl w-[400px]">
 //     <img
 //       src={imageUrl}
 //       alt="Swapneel"
 //       width={350}
-//       width={230}
+//       height={230}
 //       className="w-full rounded mb-4"
 //     />
-//     <h3 className="text-2xl mb-3">{title}</h3>
+//     <h3 className="text-2xl font-bold mb-3">{title}</h3>
 //     <p className="mb-1">{description}</p>
+//     {/* hover condition! */}
 //     <a href="#more" className="text-gray-500 hover:underline">
 //       Read More
 //     </a>
