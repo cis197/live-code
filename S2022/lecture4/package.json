@@ -5,7 +5,8 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "serve": "^13.0.2"
+    "serve": "^13.0.2",
+    "styled-components": "^5.3.3"
   },
   "scripts": {
     "1:start": "serve 1.static/",

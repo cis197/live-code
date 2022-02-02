@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import * as style from './post-preview.module.scss'
 
@@ -28,6 +29,54 @@ const PostPreview = ({ title, description }) => (
 
 // try inspect element and see what the class names end up as!
 // notice how we stop class name collision!
+
+// ------------------------------------------------------------
+
+// styled-components!!
+
+// const PostPreviewContainer = styled.article`
+//   max-width: 400px;
+//   padding: 24px;
+
+//   border-radius: 6px;
+//   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+
+//   h3 {
+//     font-size: 1.8rem;
+//     margin: 12px 0 16px;
+//   }
+
+//   p {
+//     margin: 12px 0;
+//   }
+// `
+
+// we could even factor these out into their own modular components...
+
+// const PostPreviewImage = styled.img`
+//   width: 100%;
+//   height: auto;
+//   border-radius: 4px;
+// `
+
+// const PostAnchor = styled.a`
+//   color: gray;
+
+//   &:visited {
+//     color: gray;
+//   }
+// `
+
+// TODO: show we can use props in styled-components
+
+// const PostPreview = ({ title, description }) => (
+//   <PostPreviewContainer>
+//     <PostPreviewImage src={imageUrl} alt="Swapneel" width={350} height={230} />
+//     <h3>{title}</h3>
+//     <p>{description}</p>
+//     <PostAnchor href="#more">Read More</PostAnchor>
+//   </PostPreviewContainer>
+// )
 
 // ------------------------------------------------------------
 
