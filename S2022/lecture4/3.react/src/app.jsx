@@ -1,11 +1,11 @@
 import React from 'react'
 import PostPreview from './components/post-preview'
 
-import './styles/globals.scss'
-import styles from './styles/main.module.scss'
+import * as style from './styles/layout.module.scss'
 
 const App = () => (
-  <main className={styles.container}>
+  <main className={style.container}>
+    {/* <main className="container mx-auto mt-6 flex"> */}
     <PostPreview
       title="My Sick Article"
       description="Lorem ipsum dolor sit amet consectetur adipisicing elit.

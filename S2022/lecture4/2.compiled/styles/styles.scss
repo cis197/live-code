@@ -2,7 +2,6 @@
 @use "./components/layout";
 @use "./components/post-preview";
 
-/* all this global stuff in the same file as utility and components ;-; */
 body {
   font-family: theme.$font-family;
 }
