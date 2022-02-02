@@ -8,6 +8,8 @@ $body-bg: #fff;
 $body-color: #111;
 $spacer: 1rem;
 
+// we can change these around and it's all non-destructive!
+
 // 3. Include remainder of required Bootstrap stylesheets
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
@@ -26,3 +28,17 @@ $spacer: 1rem;
 @import "bootstrap/scss/utilities/api";
 
 // 6. Add additional custom code here
+.danger-man {
+  padding: ($spacer * 0.75) $spacer;
+
+  border-radius: ($spacer * 0.25);
+  border: 1px solid tint-color($danger, 30%);
+
+  color: $danger;
+
+  @include gradient-y( tint-color($danger, 90%), tint-color($danger, 75%) );
+}
+
+// can make our own rules based on bootstrap's + our own rules!
+
+// you can even iterate over theme colors to generate rules... read up on their docs it's dope
