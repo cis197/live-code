@@ -1,0 +1,44 @@
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$body-bg: #fff;
+$body-color: #111;
+$spacer: 1rem;
+
+// we can change these around and it's all non-destructive!
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+// 4. Include any optional Bootstrap CSS as needed
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/helpers";
+
+// 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "bootstrap/scss/utilities/api";
+
+// 6. Add additional custom code here
+.danger-man {
+  padding: ($spacer * 0.75) $spacer;
+
+  border-radius: ($spacer * 0.25);
+  border: 1px solid tint-color($danger, 30%);
+
+  color: $danger;
+
+  @include gradient-y( tint-color($danger, 90%), tint-color($danger, 75%) );
+}
+
+// can make our own rules based on bootstrap's + our own rules!
+
+// you can even iterate over theme colors to generate rules... read up on their docs it's dope

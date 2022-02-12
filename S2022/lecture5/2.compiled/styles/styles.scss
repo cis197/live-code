@@ -1,0 +1,7 @@
+@use "./theme";
+@use "./components/layout";
+@use "./components/post-preview";
+
+body {
+  font-family: theme.$font-family;
+}

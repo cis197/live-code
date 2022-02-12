@@ -1,0 +1,33 @@
+$card-width: 400px;
+
+// these names are only used as keys in the imported style module!
+.container {
+  max-width: $card-width;
+  padding: 24px;
+
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .10);
+
+  h3 {
+    font-size: 1.8rem;
+    margin: 12px 0 16px;
+  }
+
+  p {
+    margin: 12px 0;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.link {
+  color: gray;
+
+  &:visited {
+    color: gray;
+  }
+}
