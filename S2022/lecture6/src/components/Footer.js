@@ -1,11 +1,19 @@
-const Footer = () => {
+import { connect } from 'react-redux'
+
+import { STATUS_MAP, toggleStatus } from '../actions'
+
+const Footer = ({ dispatchToggleStatus }) => {
   return (
     <>
-      <button style={{ marginRight: '1rem' }}> all </button>
-      <button style={{ marginRight: '1rem' }}> completed </button>
-      <button> incomplete </button>
+      <button style={{ marginRight: '1rem' }} onClick={() => dispatchToggleStatus(STATUS_MAP.ALL)}> all </button>
+      <button style={{ marginRight: '1rem' }} onClick={() => dispatchToggleStatus(STATUS_MAP.COMPLETED)}> completed </button>
+      <button onClick={() => dispatchToggleStatus(STATUS_MAP.INCOMPLETE)}> incomplete </button>
     </>
   )
 }
 
-export default Footer
+const mapDispatchToProps = dispatch => ({
+  dispatchToggleStatus: status => dispatch(toggleStatus(status))
+})
+
+export default connect(null, mapDispatchToProps)(Footer)
