@@ -1,15 +1,15 @@
 const express = require('express')
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 const path = require('path')
 
 const AccountRouter = require('./routes/account')
 
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/test'
+// const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/test'
 
-mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+// mongoose.connect(MONGO_URI, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// })
 
 const app = express()
 
