@@ -14,9 +14,9 @@
     "express": "^4.17.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "webpack": "^4.41.2"
+    "webpack": "^5.75.0"
   },
   "devDependencies": {
-    "webpack-cli": "^3.3.9"
+    "webpack-cli": "^5.0.1"
   }
 }
